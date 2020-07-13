@@ -6,19 +6,21 @@ var contactSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    email: {
-        type: String,
+    key: {
+        type: Number,
         required: true
     },
-    gender: String,
-    phone: String,
+    finished: {
+        type: Boolean,
+        required: true
+    },
     create_date: {
         type: Date,
         default: Date.now
     }
 });
 // Export Contact model
-var Contact = module.exports = mongoose.model('contact', contactSchema);
+var Contact = module.exports = mongoose.model('Todo', contactSchema);
 module.exports.get = function (callback, limit) {
     Contact.find(callback).limit(limit);
 }

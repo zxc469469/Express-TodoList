@@ -19,6 +19,13 @@ router.route('/contacts/:contact_id')
     .patch(contactController.update)
     .put(contactController.update)
     .delete(contactController.delete);
-
+router.route('/key')
+    .get(contactController.index)
+    .post(contactController.new);
+router.route('/key/:key')
+    .get(contactController.keyView)
+    .patch(contactController.update)
+    .put(contactController.update)
+    .delete(contactController.delete);
 
 module.exports = router;
